@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet"href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+</head>
+<body>
+  <div>
+      <a href="/all_admin_category">All Category</a>
+      <!-- <ngFor="let category of category">
+        {{category}}
+      </ngFor> -->
+
+  </div>
+  
+   <form [formGroup]="post"(ngSubmit)="admin(post)">
+        <h1><b>welcome to admin page</b></h1>
+        <label>Add Catagary</label>
+        <input formControlName="catagry_name" type="text" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Add</button> 
+    </form><br>
+
+
+    <form [formGroup]="post"(ngSubmit)="delete_category(post)">
+        <label>Delete Category</label>
+        <input formControlName="catagry_name" type="text" class="form-control"><br>
+        <button type="submit" class="btn btn-danger">Delete</button> 
+      
+    </form>
+  </body>
+</html>

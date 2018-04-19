@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongo db project  </title>
+    <link rel="stylesheet"href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+</head>
+<body>
+    <div class="container" ng-init="heading='welcome to page'"ng-controller="postCtrl">
+               
+        <form [formGroup]="post" (ngSubmit)="customer_signup(post)">
+            <h1><b>welcome to Customer Signup page</b></h1>
+            <label>User Name:</label>
+            <input formControlName="user_name" type="text" class="form-control"required minlength="5" maxlength="11"><br>
+            <label>Firs name:</label>
+            <input formControlName="first_name" type="text" class="form-control"required minlength="5" maxlength="11"><br>
+            <label>Last Name:</label>
+            <input formControlName="last_name" type="text" class="form-control"required minlength="5" maxlength="11"><br>
+            <label>Address:</label>
+            <input formControlName="address" type="text" class="form-control"><br>
+            <label>Mail id:</label>
+            <input formControlName="mail_id" type="text" class="form-control"><br>
+            <label>Password:</label>
+            <input formControlName="password" type="password" class="form-control"><br>
+            <button type="submit" class="btn btn-success">Sign Up</button> 
+        </form>
+       
+    </div>
+</body>
+</html>
+

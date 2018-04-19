@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongo db project  </title>
+    <link rel="stylesheet"href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   <script src="app.js"></script>
+</head>
+<body>
+        <input type="file" id="avatar"  (change)="onFileChange($event)" #fileInput>
+    <div class="container" ng-init="heading='welcome to page'"ng-controller="postCtrl">             
+        <form [formGroup]="post" (ngSubmit)="seller_page(post)">
+            <h1><b>welcome to Seller Signup page</b></h1>
+            <label>User Name:</label>
+            <input formControlName="user_name" type="text" class="form-control"required minlength="5" maxlength="11"><br>
+            <label>company Name:</label>
+            <input formControlName="company_name" type="text" class="form-control"required minlength="5" maxlength="11"><br>
+            <label>Company ID:</label>
+            <input formControlName="company_ID" type="text" class="form-control"><br>
+            <label>Company Code:</label>
+            <input formControlName="company_code" type="text" class="form-control"><br>
+            <label>Address :</label>
+            <input formControlName="address"type="text" class="form-control"><br>
+            <label>Email:</label>
+            <input formControlName="mail_id" type="text" class="form-control"><br>
+            <label>Password:</label>
+            <input formControlName="password" type="password" class="form-control"><br>
+            <button type="submit" class="btn btn-success">Sign Up</button> 
+      </form>
+    </div>
+</body>
+</html>

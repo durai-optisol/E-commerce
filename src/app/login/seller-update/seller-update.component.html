@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongo db project  </title>
+    <link rel="stylesheet"href="https://bootswatch.com/4/cosmo/bootstrap.min.css">  
+</head>
+    <div class="container">              
+        <!-- <form [formGroup]="post" (ngSubmit)="login(post)" novalidate>
+            <hr>
+            <h2><b>Update you products you want to sell</b></h2>
+            <label>Catagry_Name</label>
+            <select>
+              <option class="form-control">Cloths</option>
+              <option class="form-control">Jwellary</option>
+              <option  class="form-control">Electornics</option>
+              <option  class="form-control" >Accesseries</option>
+            </select><br>
+            <label>Product Id :</label>
+            <input formControlName="product_id" type="text" class="form-control"><br>
+            <label>Product Name :</label>
+            <input formControlName="product_name" type="text" class="form-control"><br>
+            <label>Product Value :</label>
+            <input formControlName="product_value" type="text" class="form-control"><br>
+          <button type="submit" class="btn btn-success">Sale Product</button> 
+        </form> -->
+       
+            <form [formGroup]="data" (ngSubmit)="seller_product(data)" novalidate>
+                <hr>
+                <h2><b>Update you products you want to sell</b></h2>
+                <label>Catagry_Name</label>
+                <select formControlName="selector" > 
+                  <option class="form-control" *ngFor="let products of products">
+                      {{products.catagry_name}}</option>
+                </select><br>
+                <label>Category Name :</label>
+                <input formControlName="category_name" type="text" class="form-control"><br>
+                <label>Product Id :</label>
+                <input formControlName="product_id" type="text" class="form-control"><br>
+                <label>Product Name :</label>
+                <input formControlName="product_name"  type="text" class="form-control"><br>
+                <label>Product Value :</label>
+                <input formControlName="product_value"   type="text" class="form-control"><br>
+              <button  type="submit" class="btn btn-success">Sale Product</button>
+        </form>
+    </div>
+
+</html>

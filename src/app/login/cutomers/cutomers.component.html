@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet"href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" 
+  integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" 
+  crossorigin="anonymous"></script>
+  
+  </head>
+
+  <body> 
+      
+      <input type="button"value="a-z"(click)="sort_assending()">
+      <input type="button"value="z-a"(click)="sort_desendting()">    
+      <input type="button"value="low-high"(click)="sort_low_high()">
+      <input type="button"value="high-low"(click)="sort_high_low()">
+       <input type="text"placeholder="search"id="value">
+       <button  (click)="search()"><i class="fas fa-search" ></i></button>
+<!-- <select>
+  
+  <option value="a-z"ng-change="sort_assending()">assending_order</option>
+  <option value="z-a"ng-change="sort_assending()">assending_order</option>
+  <option value="low-high"ng-change="sort_assending()">assending_order</option>
+  <option value="high-low"ng-change="sort_assending()">assending_order</option>
+
+</select> -->
+
+       
+  <form [formGroup]="data" (ngSubmit)="customer_page(data)" novalidate>
+  
+    <h2><b>Welcome to our E-commerce site</b></h2>
+    <label>Choose Catagry_Name</label>
+    <select> 
+        <option class="form-control" *ngFor="let products of products">
+            {{products.catagry_name}}</option>
+      </select>
+      <label>Item Per Page</label>
+      <input type="text" id="item_per_page"><input type="button" value="Submit" (click)="item_per_page()">
+  
+    <table>  
+        <tr>
+            <div class="thumbnail">
+                <!-- <img src="" alt="center"> -->
+                <div class="caption" *ngFor="let page of this.page" >
+                  <h3>{{page.product_name}}</h3>
+                  <p>{{page.product_value}}</p>
+                  <p><a href="#" class="btn btn-primary" role="button">Buy</a>
+                     <a href="#" class="btn btn-default" role="button">Add to cart</a></p>
+                </div>
+              </div>
+            
+            
+          </tr>    
+    </table>
+            
+      
+    <button type="submit" class="btn btn-success">Buy a Product</button>
+
+
+</form>
+
+
+  <h2>Pagination</h2>
+              
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" (click)="previous()">Previous</a></li>
+    
+    <a (click)="test(i)" class="page-link" *ngFor="let i of this.array;let i = index" [attr.data-index]="i" >
+       
+    {{i}}</a>
+    <li class="page-item"><a class="page-link" (click)="next()">Next</a></li>
+    
+  </ul>
+
+</body>
+</html>

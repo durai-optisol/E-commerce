@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongo db project  </title>
+    <!-- link[https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css] -->
+
+    <link rel="stylesheet"href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <!-- <script href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.c"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   <script src="app.js"></script>
+</head>
+    <div class="container">              
+        <form [formGroup]="post" (ngSubmit)="login(post)" novalidate>
+            <h1><b>welcome to Login page</b></h1>
+            <label>User Name:</label>
+            <input formControlName="user_name" type="text" class="form-control"><br>
+            <label>Password:</label>
+            <input formControlName="password" type="password" class="form-control"><br>
+          <button type="submit" class="btn btn-success">Login</button> 
+        </form>
+    </div>
+
+</html>
+
+
